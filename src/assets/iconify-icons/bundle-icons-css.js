@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs' // fs'yi import ettik
 import { dirname, join } from 'path' // path'i import ettik
+import { fileURLToPath } from 'url' // ES modülleri için fileURLToPath fonksiyonunu import ettik
 
 // Iconify Tools ve Utils modüllerini import ettik
 import { cleanupSVG, importDirectory, isEmptyColor, parseColors, runSVGO } from '@iconify/tools'
@@ -7,6 +8,10 @@ import { getIcons, getIconsCSS, stringToIcon } from '@iconify/utils'
 
 // JSON dosyalarını import ediyoruz
 import tablerJSON from '@iconify/json/json/tabler.json' // require.resolve yerine import kullandık
+
+// __dirname tanımını ES modülleri için çözmek
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const sources = {
   json: [
