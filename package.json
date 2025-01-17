@@ -58,5 +58,6 @@
   },
   "overrides": {
     "rimraf": "^5.0.7"
-  }
+  },
+  "type": "module"
 }
